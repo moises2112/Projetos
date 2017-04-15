@@ -1,0 +1,27 @@
+echo "# RepositorioUm" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/moises2112/Repositorio.git
+git push -u origin master
+
+2- git config --global user.name "NOME"
+3- git config --global user.email "email"
+
+git pull origin master --allow-unrelated-histories
+
+git reset HEAD~1 
+git remote rm origin
+git reset
+rm -rf .git
+
+git lfs install
+git lfs track "*.psd
+git add .gitattributes
+"
+
+git config --system core.longpaths true
+
+git config --global core.autocrlf false
+
+site para download de pasta do git:http://kinolien.github.io/gitzip/
