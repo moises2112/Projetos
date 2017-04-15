@@ -1,0 +1,83 @@
+03-30 22:02:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "ID_CONT" not found; SQL statement:
+delete from contatos where id_cont=? [42122-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:178)
+	at org.h2.message.DbException.get(DbException.java:154)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:148)
+	at org.h2.expression.Comparison.optimize(Comparison.java:179)
+	at org.h2.command.dml.Delete.prepare(Delete.java:131)
+	at org.h2.command.Parser.prepareCommand(Parser.java:248)
+	at org.h2.engine.Session.prepareLocal(Session.java:442)
+	at org.h2.engine.Session.prepareCommand(Session.java:384)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1188)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:73)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:276)
+	at br.com.lojamodel.dao.impl.ContatoDAO.remover(ContatoDAO.java:100)
+	at br.com.lojamodel.controle.ContatosControle.processoDeletarPorId(ContatosControle.java:50)
+	at br.com.lojamodel.controle.ContatosControle.main(ContatosControle.java:64)
+03-30 22:30:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-176]
+03-30 22:31:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-176]
+03-30 22:41:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-176]
+04-01 17:50:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-176]
+04-01 19:54:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Invalid value "1" for parameter "parameterIndex" [90008-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:178)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:227)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1383)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:353)
+	at br.com.lojamodel.dao.impl.ContatoDAO.buscarPorNome(ContatoDAO.java:155)
+	at br.com.lojamodel.controle.ContatosControle.processoBuscarPorNome(ContatosControle.java:75)
+	at br.com.lojamodel.controle.ContatosControle.main(ContatosControle.java:110)
+04-01 19:55:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+04-01 19:58:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+04-01 20:45:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "saulo"; SQL statement:
+select * from contatos where lower(nome) or upper(nome) like ? [22018-176]
+04-01 21:18:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+04-01 21:24:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+04-01 21:29:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+04-02 03:52:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE FROM[*] CONTATOS SET NOME = ? WHERE ID=? "; expected "identifier"; SQL statement:
+update from contatos set nome = ? where id=? [42001-176]
+04-02 04:04:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE FROM[*] CONTATOS SET NOME = ? WHERE ID=? "; expected "identifier"; SQL statement:
+update from contatos set nome = ? where id=? [42001-176]
+04-02 04:05:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "Rafael"; SQL statement:
+update contatos set nome = ? where id=? [22018-176]
+04-02 04:11:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "Rafael"; SQL statement:
+update contatos set nome = ? where id = ? [22018-176]
+04-02 04:35:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE FROM[*] CONTATOS SET EMAIL = ? WHERE ID=? "; expected "identifier"; SQL statement:
+update from contatos set email = ? where id=? [42001-176]
+04-02 04:57:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE CONTATOS SET ?[*] = ? WHERE ID=? "; expected "identifier"; SQL statement:
+update contatos set ? = ? where id=? [42001-176]
+04-02 05:00:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE CONTATOS SET ?[*] = ? WHERE ID=? "; expected "identifier"; SQL statement:
+update contatos set ? = ? where id=? [42001-176]
+04-02 05:00:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE CONTATOS SET NULL[*] = ? WHERE ID=? "; expected "identifier"; SQL statement:
+update contatos set null = ? where id=? [42001-176]
+04-02 15:43:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-176]
+04-02 15:55:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-176]
+04-02 16:00:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-176]
+04-02 16:03:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-176]
+04-02 16:06:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-176]
