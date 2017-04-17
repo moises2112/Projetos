@@ -1,0 +1,11 @@
+package br.revisao.uninove.dao;
+
+import java.sql.SQLException;
+
+import br.revisao.uninove.model.Pessoa;
+
+public class PessoaDAO {
+	public void adicionar(Object obj) throws SQLException {
+		Pessoa pessoa = (Pessoa) obj;
+	}
+}

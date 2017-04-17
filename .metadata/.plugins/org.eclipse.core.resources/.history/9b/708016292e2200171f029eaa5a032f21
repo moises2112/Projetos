@@ -1,0 +1,5 @@
+package br.revisao.uninove.model;
+
+public interface abc {
+	
+}

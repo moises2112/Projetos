@@ -1,0 +1,10 @@
+import java.util.Scanner;
+
+import br.revisao.uninove.model.Pessoa;
+
+public class chama {
+	public static void main(String[] args) {
+		
+		Pessoa pessoa = new Pessoa();
+	}
+}

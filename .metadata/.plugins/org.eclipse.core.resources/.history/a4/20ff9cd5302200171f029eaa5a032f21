@@ -1,0 +1,10 @@
+import br.revisao.uninove.model.Pessoa;
+
+public class chama {
+	public static void main(String[] args) {
+		System.out.println("Olá, digite seu nome:");
+		
+		Pessoa pessoaUm= new Pessoa();
+		
+	}
+}

@@ -1,0 +1,29 @@
+package br.revisao.uninove.model;
+
+public class Pessoa extends pai {
+
+	public String nome;
+	public String id;
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	@Override
+	public String peso() {
+		return "nome" + id;
+	}
+
+}

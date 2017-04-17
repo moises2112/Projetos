@@ -1,0 +1,5 @@
+DROP TABLE PESSOA
+create table Pessoa(
+	nome varchar2(100),
+	id_pessoa BIGINT(5));
+SELECT * FROM PESSOA

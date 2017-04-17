@@ -1,0 +1,7 @@
+ackage br.revisao.uninove.model;
+
+public interface TesteUm {
+
+	public String peso();
+
+}

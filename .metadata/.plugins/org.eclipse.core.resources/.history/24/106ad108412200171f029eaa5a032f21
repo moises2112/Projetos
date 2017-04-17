@@ -1,0 +1,28 @@
+package br.revisao.uninove.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import br.revisao.uninove.model.ConnectionFactory;
+import br.revisao.uninove.model.Pessoa;
+
+public class PessoaDAO {
+	public void adicionar(Object obj) throws SQLException {
+		Pessoa pessoa = (Pessoa) obj;
+		Connection conn = ConnectionFactory.getConnectionJDBC();
+		PreparedStatement pstm = conn.prepareStatement("insert into Pessoa (id_pessoa,nome) values (?,?)");
+
+		try {
+			pstm.setLong(1, pessoa.getId());
+			pstm.setString(2, pessoa.getNome());
+			pstm.execute();
+			System.out.println("Pessoa gravada!");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			conn.close();
+			pstm.close();
+		}
+	}
+}

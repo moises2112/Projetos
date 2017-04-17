@@ -1,0 +1,39 @@
+04-15 22:01:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+insert into pessoa (id,nome) values (?,?) [42102-176]
+04-15 22:03:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+insert into pessoa (id_pessoa,nome) values (?,?) [42102-176]
+04-15 22:04:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+insert into pessoa (id_pessoa,nome) values (?,?) [42102-176]
+04-15 22:05:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+insert into Pessoa (id_pessoa,nome) values (?,?) [42102-176]
+04-15 22:26:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+insert into Pessoa (id_pessoa,nome) values (?,?) [42102-176]
+04-15 22:27:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+insert into Pessoa (id_pessoa,nome) values (?,?) [42102-176]
+04-15 22:28:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+insert into Pessoa (id_pessoa,nome) values (?,?) [42102-176]
+04-15 22:30:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+insert into Pessoa (id_pessoa,nome) values (?,?) [42102-176]
+04-15 22:50:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+insert into Pessoa (id_pessoa,nome) values (3,'gabriel') [42102-176]
+04-15 22:58:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+insert into pessoa (id_pessoa,nome) values (?,?) [42102-176]
+04-15 23:01:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+insert into pessoa (id_pessoa,nome) values (10,'rafael') [42102-176]
+04-15 23:07:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+insert into Pessoa (id_pessoa,nome) values (10,'rafael') [42102-176]
+04-15 23:17:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+insert into Pessoa (id_pessoa,nome) values (10,'rafael') [42102-176]

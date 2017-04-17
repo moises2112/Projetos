@@ -1,0 +1,9 @@
+package br.revisao.uninove.model;
+
+public class pai {
+	public String pai;
+
+	public String getPai() {
+		return pai;
+	}
+}

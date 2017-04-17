@@ -1,0 +1,9 @@
+04-16 00:03:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+insert into Pessoa (id_pessoa,nome) values (10,'rafael') [42102-176]
+04-16 00:10:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+insert into Pessoa (id_pessoa,nome) values (10,'rafael') [42102-176]
+04-16 00:12:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+insert into Pessoa (id_pessoa,nome) values (10,'rafael') [42102-176]

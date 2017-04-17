@@ -1,0 +1,10 @@
+package br.revisao.uninove.model;
+
+public interface TesteUm {
+	
+	public default String peso(){
+		return "ola";
+		
+	}
+	
+}
