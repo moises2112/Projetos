@@ -1,8 +1,0 @@
-04-16 00:55:00 jdbc[5]: exception
-org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
-drop table pessoa
- [42102-176]
-04-16 00:55:01 jdbc[6]: exception
-org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
-drop table pessoa
- [42102-176]

@@ -1,8 +1,0 @@
-DROP TABLE PESSOA
-create table Pessoa(
-	id_pessoa BIGINT(5) primary key,
-	nome varchar2(100)
-	);
-insert into Pessoa (id_pessoa,nome) values (2,'henry')
-insert into Pessoa (id_pessoa,nome) values (5,'gabriel')
-SELECT * FROM PESSOA
