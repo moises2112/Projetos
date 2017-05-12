@@ -1,0 +1,27 @@
+Create table Usuario(
+	id_usuario INT NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(45) NOT NULL,
+	email VARCHAR(45) NOT NULL,
+	logradouro VARCHAR(45) NOT NULL,
+	numero VARCHAR(45) NOT NULL,
+	cep INT NOT NULL,
+	bairo VARCHAR(45) NOT NULL,
+	data_nascimento DATE NOT NULL,
+	sexo VARCHAR(4) NOT NULL,
+  	senha VARCHAR(255) NOT NULL,
+  	PRIMARY KEY (`id_usuario`)
+  )
+CREATE TABLE CACHORRO(
+	IDCACHORRO INT NOT NULL AUTO_INCREMENT,
+	RAÇA VARCHAR(45) NOT NULL,
+    SEXO VARCHAR(4) NOT NULL,
+    NOME VARCHAR(45) NOT NULL,
+    IDADE INT NOT NULL,
+    FOTO_PERFIL INT NULL,
+  	PRIMARY KEY (`IDCACHORRO`),
+  	FOREIGN KEY (``id_usuario') references usuario
+)
+
+drop table USUARIO
+drop table CACHORRO;  	
+ show columns from cachorro

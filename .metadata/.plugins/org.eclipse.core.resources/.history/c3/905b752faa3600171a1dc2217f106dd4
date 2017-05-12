@@ -13,6 +13,7 @@ public class ConnectionFactory {
 			if ((conn == null) || (conn.isClosed() == true)) {
 				try {
 					conn = DriverManager.getConnection("jdbc:h2:bancodedados/db", "sa", "");
+					System.out.println("Deu certo");
 				} catch (SQLException e) {
 					throw new RuntimeException(e);
 				}
