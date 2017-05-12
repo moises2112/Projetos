@@ -1,0 +1,62 @@
+05-11 20:42:07 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "Create table Usuario(
+	id_usuario` INT NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(45) NOT NULL,
+	email VARCHAR(45) NOT NULL,
+	logradouro VARCHAR(45) NOT NULL,
+	numero VARCHAR(45) NOT NULL,
+	cep INT NOT NULL,
+	bairo VARCHAR(45) NOT NULL,
+	data_nascimento DATE NOT NULL,
+	sexo VARCHAR(4) NOT NULL,
+  	senha VARCHAR(255) NOT NULL,
+  	cachorro_idcachorro INT NOT NULL,
+  	PRIMARY KEY (`id_usuario[*]`),
+  
+)"; SQL statement:
+Create table Usuario(
+	id_usuario` INT NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(45) NOT NULL,
+	email VARCHAR(45) NOT NULL,
+	logradouro VARCHAR(45) NOT NULL,
+	numero VARCHAR(45) NOT NULL,
+	cep INT NOT NULL,
+	bairo VARCHAR(45) NOT NULL,
+	data_nascimento DATE NOT NULL,
+	sexo VARCHAR(4) NOT NULL,
+  	senha VARCHAR(255) NOT NULL,
+  	cachorro_idcachorro INT NOT NULL,
+  	PRIMARY KEY (`id_usuario`),
+  
+) [42000-176]
+05-11 20:42:36 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "Create table Usuario(
+	id_usuario` INT NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(45) NOT NULL,
+	email VARCHAR(45) NOT NULL,
+	logradouro VARCHAR(45) NOT NULL,
+	numero VARCHAR(45) NOT NULL,
+	cep INT NOT NULL,
+	bairo VARCHAR(45) NOT NULL,
+	data_nascimento DATE NOT NULL,
+	sexo VARCHAR(4) NOT NULL,
+  	senha VARCHAR(255) NOT NULL,
+  	cachorro_idcachorro INT NOT NULL,
+  	PRIMARY KEY (`id_usuario[*]`)
+  
+)"; SQL statement:
+Create table Usuario(
+	id_usuario` INT NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(45) NOT NULL,
+	email VARCHAR(45) NOT NULL,
+	logradouro VARCHAR(45) NOT NULL,
+	numero VARCHAR(45) NOT NULL,
+	cep INT NOT NULL,
+	bairo VARCHAR(45) NOT NULL,
+	data_nascimento DATE NOT NULL,
+	sexo VARCHAR(4) NOT NULL,
+  	senha VARCHAR(255) NOT NULL,
+  	cachorro_idcachorro INT NOT NULL,
+  	PRIMARY KEY (`id_usuario`)
+  
+) [42000-176]
