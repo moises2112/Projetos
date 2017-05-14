@@ -1,2 +1,0 @@
-127.0.0.1 - - [15/Apr/2017:22:02:45 -0300] "GET / HTTP/1.1" 404 951
-0:0:0:0:0:0:0:1 - - [15/Apr/2017:22:02:46 -0300] "GET /Revis%C3%A3o/WEB-INF/classes/br/revisao/uninove/dao/PessoaDAO.java HTTP/1.1" 404 1083

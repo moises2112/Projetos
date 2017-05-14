@@ -4,6 +4,17 @@
 		<item value="C:\Users\moise\Desktop\Moises\GIT_REPOSITÓRIOS\Projetos\lojamodel"/>
 		<item value="C:\Users\moise\Desktop\Moises\Uninove\Disciplinas 5 semestre 2017\Aplicações orientadas ao objeto\abril\13 04 2017\eloja"/>
 	</list>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\moise\Desktop\Moises\GIT_REPOSITÓRIOS\Projetos"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
 	<section name="NewWizardAction">
 		<item value="org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">

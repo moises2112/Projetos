@@ -12,7 +12,7 @@ public class ConnectionFactory {
 		try {
 			if ((conn == null) || (conn.isClosed() == true)) {
 				try {
-					conn = DriverManager.getConnection("jdbc:h2:bancodedados/db", "sa", "");
+					conn = DriverManager.getConnection("jdbc:h2:bancodedados/databasedog", "sa", "");
 				} catch (SQLException e) {
 					throw new RuntimeException(e);
 				}
