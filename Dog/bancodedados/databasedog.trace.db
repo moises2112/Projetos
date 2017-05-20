@@ -117,3 +117,31 @@ delete from usuario [90002-176]
 	at br.dog.uninove.dao.UsuarioDao.removerTodos(UsuarioDao.java:101)
 	at br.dog.uninove.controller.UsuarioController.processoRemoverTodos(UsuarioController.java:99)
 	at RunApp.main(RunApp.java:7)
+05-20 15:17:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+05-20 15:19:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+05-20 15:19:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+05-20 15:20:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+05-20 15:44:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+update usuario set senha = ?, nome = ?, logradouro = ?, data_nascimento = ?,numero = ?,  cep = ?, bairro = ?, sexo = ?, email = ?  where id_usuario=? [90002-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:178)
+	at org.h2.message.DbException.get(DbException.java:154)
+	at org.h2.message.DbException.get(DbException.java:143)
+	at org.h2.command.Prepared.query(Prepared.java:213)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:91)
+	at org.h2.command.Command.executeQuery(Command.java:197)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:109)
+	at br.com.dog.model.dao.impl.jdbc.UsuarioDao.update(UsuarioDao.java:152)
+	at br.com.dog.test.controller.UsuarioController.processoAtualizar(UsuarioController.java:118)
+	at br.com.dog.test.controller.UsuarioController.main(UsuarioController.java:132)
+05-20 16:02:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "update usuario set senha = 'senai132', nome = 'rafael', logradouro = 'rua joao', data_nascimento = '2001-01-01'numero = '11111',  cep = '123456', bairro = 'joana', sexo = 'm', email = 'guilherme@gmail.com'  where id_usuario = [*]'2"; SQL statement:
+update usuario set senha = 'senai132', nome = 'rafael', logradouro = 'rua joao', data_nascimento = '2001-01-01'numero = '11111',  cep = '123456', bairro = 'joana', sexo = 'm', email = 'guilherme@gmail.com'  where id_usuario = '2 [42000-176]
+05-20 16:04:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE USUARIO SET SENHA = 'senai132', NOME = 'rafael', LOGRADOURO = 'rua joao', DATA_NASCIMENTO = '2001-01-01'NUMERO[*] = 11111,  CEP = 123456, BAIRRO = 'joana', SEXO = 'm', EMAIL = 'guilherme@gmail.com'  WHERE ID_USUARIO = 2 "; SQL statement:
+update usuario set senha = 'senai132', nome = 'rafael', logradouro = 'rua joao', data_nascimento = '2001-01-01'numero = 11111,  cep = 123456, bairro = 'joana', sexo = 'm', email = 'guilherme@gmail.com'  where id_usuario = 2 [42000-176]

@@ -15,4 +15,5 @@
 <fullyQualifiedTypeName name="br.dog.uninove.dao.UsuarioDao"/>
 <fullyQualifiedTypeName name="br.dog.uninove.model.Usuario"/>
 <fullyQualifiedTypeName name="br.dog.uninove.controller.UsuarioController"/>
+<fullyQualifiedTypeName name="br.com.dog.model.dao.UsuarioDAO"/>
 </qualifiedTypeNameHistroy>
