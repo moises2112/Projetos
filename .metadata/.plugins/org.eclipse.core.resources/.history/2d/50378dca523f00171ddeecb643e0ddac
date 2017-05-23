@@ -1,0 +1,38 @@
+Create table Usuario(
+	id_usuario BIGINT NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(45) NOT NULL,
+	email VARCHAR(45) NOT NULL,
+	logradouro VARCHAR(45) NOT NULL,
+	numero int NOT NULL,
+	cep INT NOT NULL,
+	bairro VARCHAR(45) NOT NULL,
+	data_nascimento DATE NOT NULL,
+	sexo VARCHAR(4) NOT NULL,
+  	senha VARCHAR(255) NOT NULL,
+	PRIMARY KEY (`id_usuario`)
+);
+CREATE TABLE CACHORRO(
+	ID_CACHORRO BIGINT NOT NULL AUTO_INCREMENT,
+	id_usuario BIGINT NOT NULL,
+	RAÇA VARCHAR(45) NOT NULL,
+    SEXO VARCHAR(4) NOT NULL,
+    NOME VARCHAR(45) NOT NULL,
+    IDADE INT NOT NULL,
+    PRIMARY KEY (`ID_CACHORRO`),
+  	FOREIGN KEY (id_usuario) references usuario(id_usuario)
+);
+create table Match(
+	id_match BIGINT not null auto_increment,
+	REQUISITANTE INT NOT NULL,
+	REQUISITADO INT,
+	START VARCHAR(3),
+	FOREIGN KEY (REQUISITANTE) references CACHORRO(ID_CACHORRO),
+	FOREIGN KEY (REQUISITADO) references CACHORRO(ID_CACHORRO)
+);
+
+drop table USUARIO;
+drop table CACHORRO;
+drop table Match;
+show columns from cachorro;
+show columns from usuario;
+show columns from Match;

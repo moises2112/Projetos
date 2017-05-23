@@ -4,26 +4,25 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.dog.model.entity.Cachorro;
+import br.com.dog.model.entity.Usuario;
 
 public interface CachorroDAO {
-	
 
 	// Create
-	public void adicionar(Cachorro cachorro) throws SQLException;
+	public void create(Cachorro cachorro) throws SQLException;
 
 	// ReadAll
-	public List<Object> buscarTodos() throws SQLException;
+	public List<Cachorro> readAll() throws SQLException;
 
 	// DeleteAll
-	public void removerTodos() throws SQLException;
+	public void deleteAll() throws SQLException;
 
 	// Update
-	public void atualizar(Cachorro cachorro,int a) throws SQLException;
+	public void update(Cachorro cachorro) throws SQLException;
 
 	// Read especifico
-	public Object buscarEspecifica(Cachorro cachorro, int a) throws SQLException;
+	public Cachorro read(Cachorro cachorro) throws SQLException;
 
 	// Delete per id
-	public void remover(Cachorro cachorro) throws SQLException;
-
+	public void delete(Cachorro cachorro) throws SQLException;
 }

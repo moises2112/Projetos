@@ -14,7 +14,7 @@ public class Usuario {
 	private String sexo;
 	private String senha;
 
-	public Long getIdUsuario() {
+public Long getIdUsuario() {
 		return idUsuario;
 	}
 

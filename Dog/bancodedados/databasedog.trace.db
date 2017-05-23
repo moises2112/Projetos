@@ -145,3 +145,18 @@ update usuario set senha = 'senai132', nome = 'rafael', logradouro = 'rua joao',
 05-20 16:04:42 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE USUARIO SET SENHA = 'senai132', NOME = 'rafael', LOGRADOURO = 'rua joao', DATA_NASCIMENTO = '2001-01-01'NUMERO[*] = 11111,  CEP = 123456, BAIRRO = 'joana', SEXO = 'm', EMAIL = 'guilherme@gmail.com'  WHERE ID_USUARIO = 2 "; SQL statement:
 update usuario set senha = 'senai132', nome = 'rafael', logradouro = 'rua joao', data_nascimento = '2001-01-01'numero = 11111,  cep = 123456, bairro = 'joana', sexo = 'm', email = 'guilherme@gmail.com'  where id_usuario = 2 [42000-176]
+05-22 21:48:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Parameter "#6" is not set; SQL statement:
+update cachorro set nome = ?,raça = ?, idade = ?, sexo = ?,id_usuario = ? where id_usuario = ?  [90012-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:178)
+	at org.h2.message.DbException.get(DbException.java:154)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:81)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:165)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:78)
+	at org.h2.command.Command.executeUpdate(Command.java:254)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:158)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:144)
+	at br.com.dog.model.dao.impl.jdbc.CachorroDao.update(CachorroDao.java:120)
+	at br.com.dog.test.controller.CachorroController.processoAtualizar(CachorroController.java:82)
+	at br.com.dog.test.controller.CachorroController.main(CachorroController.java:90)

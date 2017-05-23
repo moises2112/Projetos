@@ -16,4 +16,7 @@
 <fullyQualifiedTypeName name="br.dog.uninove.model.Usuario"/>
 <fullyQualifiedTypeName name="br.dog.uninove.controller.UsuarioController"/>
 <fullyQualifiedTypeName name="br.com.dog.model.dao.UsuarioDAO"/>
+<fullyQualifiedTypeName name="br.com.dog.model.dao.CachorroDAO"/>
+<fullyQualifiedTypeName name="br.com.dog.model.dao.impl.jdbc.CachorroDao"/>
+<fullyQualifiedTypeName name="br.com.dog.model.entity.Cachorro"/>
 </qualifiedTypeNameHistroy>

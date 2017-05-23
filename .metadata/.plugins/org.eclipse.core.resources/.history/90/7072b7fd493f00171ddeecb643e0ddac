@@ -1,0 +1,80 @@
+package br.com.dog.model.dao.impl.jdbc;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import br.com.dog.model.ConnectionFactory.ConnectionFactory;
+import br.com.dog.model.dao.CachorroDAO;
+import br.com.dog.model.dao.DAO;
+import br.com.dog.model.entity.Cachorro;
+import br.com.dog.model.entity.Usuario;
+
+public class CachorroDao implements CachorroDAO {
+
+	@Override
+	public void create(Cachorro cachorro) throws SQLException {
+
+		Connection con = ConnectionFactory.getConnectionJDBC();
+
+		String sql = "insert into Usuario (nome,email,logradouro,numero,cep,bairro,data_nascimento,sexo,senha) values(?,?,?,?,?,?,?,?,?)";
+		PreparedStatement pst = con.prepareStatement(sql);
+
+		try {
+
+			// preenche os valores
+			pst.setString(1, cachorro.getNome());
+			pst.setString(2, cachorro.getRaca());
+			pst.setInt(3, cachorro.getIdade());
+			pst.setString(4, cachorro.getSexo());
+			pst.setInt(5, cachorro.getIdUsuario());
+			pst.setString(6, usuario.getBairro());
+			pst.setDate(7, (java.sql.Date) new Date(usuario.getdataNascimento().getTimeInMillis()));
+			pst.setString(8, usuario.getSexo());
+			pst.setString(9, usuario.getSenha());
+			// executa
+			pst.execute();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			con.close();
+			pst.close();
+		}
+
+
+	}
+
+	@Override
+	public List<Cachorro> readAll() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteAll() throws SQLException {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update(Cachorro cachorro) throws SQLException {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Usuario read(Cachorro cachorro) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(Cachorro cachorro) throws SQLException {
+		// TODO Auto-generated method stub
+
+	}
+
+}

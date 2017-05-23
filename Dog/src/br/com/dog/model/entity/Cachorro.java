@@ -1,23 +1,23 @@
 package br.com.dog.model.entity;
 
 public class Cachorro {
-	private int idCachorro;
-	private int idUsuario;
+	private long idCachorro;
+	private long idUsuario;
 	private String raca;
     private String sexo;
     private String nome;
     private int idade;
     
-	public int getIdCachorro() {
+	public long getIdCachorro() {
 		return idCachorro;
 	}
-	public void setIdCachorro(int idCachorro) {
+	public void setIdCachorro(long idCachorro) {
 		this.idCachorro = idCachorro;
 	}
-	public int getIdUsuario() {
+	public long getIdUsuario() {
 		return idUsuario;
 	}
-	public void setIdUsuario(int idUsuario) {
+	public void setIdUsuario(long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
 	public String getRaca() {

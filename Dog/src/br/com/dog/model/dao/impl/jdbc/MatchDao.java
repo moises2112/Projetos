@@ -4,44 +4,47 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.dog.model.dao.MatchDAO;
+import br.com.dog.model.entity.Cachorro;
 import br.com.dog.model.entity.Match;
+import br.com.dog.model.entity.Usuario;
 
 public class MatchDao implements MatchDAO {
 
 	@Override
-	public void adicionar(Match match) throws SQLException {
+	public void create(Cachorro cachorro) throws SQLException {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public List<Object> buscarTodos() throws SQLException {
+	public List<Cachorro> readAll() throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void removerTodos() throws SQLException {
+	public void deleteAll() throws SQLException {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void atualizar(Match match, int a) throws SQLException {
+	public void update(Cachorro cachorro) throws SQLException {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Object buscarEspecifica(Match match, int a) throws SQLException {
+	public Usuario read(Cachorro cachorro) throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void remover(Match match) throws SQLException {
+	public void delete(Cachorro cachorro) throws SQLException {
 		// TODO Auto-generated method stub
 		
 	}
-	
+
+		
 }

@@ -128,6 +128,7 @@ public class UsuarioController {
 
 	public static void processoBuscaEspecifica() {
 
+
 		Usuario user = new Usuario();
 		user.setIdUsuario((long) 3);
 		UsuarioDAO userdao = new UsuarioDao();
@@ -149,6 +150,7 @@ public class UsuarioController {
 	}
 
 	public static void processoRemover() {
+
 		UsuarioDAO userdao = new UsuarioDao();
 		Usuario usuario = new Usuario();
 		usuario.setIdUsuario((long) 3);

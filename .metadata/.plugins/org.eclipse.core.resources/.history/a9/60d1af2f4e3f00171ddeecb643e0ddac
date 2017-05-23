@@ -1,0 +1,40 @@
+package br.com.dog.test.controller;
+
+import java.sql.SQLException;
+
+import br.com.dog.model.dao.CachorroDAO;
+import br.com.dog.model.dao.impl.jdbc.CachorroDao;
+import br.com.dog.model.entity.Usuario;
+
+public class CachorroController {
+
+	public static void processoBuscarTodos() {
+		CachorroDAO dogDAO = new CachorroDao();
+		try {
+			if (dogDAO.readAll() != null)
+				try {
+					System.out.println("\t\t\t\t\t\t|Cachorros|");
+					for (Object cachorro : dogDAO.readAll()) {
+						Cachorro cachorro = (Cachorro) cachorro;
+						System.out.println("\t\t\tID:" + user.getIdUsuario() + "\tNome:" + user.getNome()
+								+ "\tDataNascimento:" + sdf.format(user.getdataNascimento().getTime()) + "\tSexo:"
+								+ user.getSexo().toUpperCase() + "\n\t\tLogradouro:" + user.getLogradouro()
+								+ "\tNumero:" + user.getNumero() + "\tCep:" + user.getCep() + "\tBairro:"
+								+ user.getBairro() + "\n\t\t\t\t\tLogin:" + user.getEmail() + "\tSenha:"
+								+ user.getSenha() + "\n\n");
+					}
+					System.out.println("\n\n\n");
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			else {
+				System.out.println("Nenhum usuario gravado");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}
