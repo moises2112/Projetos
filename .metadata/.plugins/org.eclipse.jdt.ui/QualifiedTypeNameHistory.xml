@@ -19,4 +19,7 @@
 <fullyQualifiedTypeName name="br.com.dog.model.dao.CachorroDAO"/>
 <fullyQualifiedTypeName name="br.com.dog.model.dao.impl.jdbc.CachorroDao"/>
 <fullyQualifiedTypeName name="br.com.dog.model.entity.Cachorro"/>
+<fullyQualifiedTypeName name="br.com.dog.model.entity.Match"/>
+<fullyQualifiedTypeName name="br.com.dog.model.dao.impl.jdbc.MatchDao"/>
+<fullyQualifiedTypeName name="br.com.dog.model.dao.MatchDAO"/>
 </qualifiedTypeNameHistroy>

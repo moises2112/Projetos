@@ -22,6 +22,7 @@ public class UsuarioDao implements UsuarioDAO {
 	@Override
 	public void create(Usuario usuario) throws SQLException {
 
+
 		Connection con = ConnectionFactory.getConnectionJDBC();
 
 		String sql = "insert into Usuario (nome,email,logradouro,numero,cep,bairro,data_nascimento,sexo,senha) values(?,?,?,?,?,?,?,?,?)";
@@ -53,6 +54,7 @@ public class UsuarioDao implements UsuarioDAO {
 
 	@Override
 	public List<Usuario> readAll() throws SQLException {
+
 		List<Usuario> listaDeUsuario = null;
 
 		Connection con = new ConnectionFactory().getConnectionJDBC();
@@ -98,6 +100,7 @@ public class UsuarioDao implements UsuarioDAO {
 
 	@Override
 	public void deleteAll() throws SQLException {
+
 		Connection con = new ConnectionFactory().getConnectionJDBC();
 		PreparedStatement stmt = con.prepareStatement("delete from usuario");
 		try {
@@ -115,7 +118,7 @@ public class UsuarioDao implements UsuarioDAO {
 	@Override
 	public void update(Usuario usuario) throws SQLException {
 		Connection con = new ConnectionFactory().getConnectionJDBC();
-		System.out.println(usuario.getIdUsuario());
+
 		PreparedStatement stmt = null;
 		stmt = con.prepareStatement("update usuario set senha = ?, nome = ?, logradouro = ?, data_nascimento = ?,"
 				+ "numero = ?,  cep = ?, bairro = ?, sexo = ?, email = ?  where id_usuario = ? ");

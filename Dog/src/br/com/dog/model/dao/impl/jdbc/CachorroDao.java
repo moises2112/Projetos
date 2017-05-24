@@ -126,20 +126,21 @@ public class CachorroDao implements CachorroDAO {
 		}
 
 	}
-// Testar codigo abaixo
+
+	// Testar codigo abaixo
 	@Override
 	public Cachorro read(Cachorro cachorro) throws SQLException {
 		Connection con = new ConnectionFactory().getConnectionJDBC();
 		List<Object> listaDeCachorro = null;
 
 		PreparedStatement stmt = con.prepareStatement("select * from cachorro where id_cachorro = ?");
-		stmt.setLong(1, cachorro.getIdUsuario());
+		stmt.setLong(1, cachorro.getIdCachorro());
 
 		// executa um select
 		ResultSet rs = stmt.executeQuery();
 		try {
 			while (rs.next()) {
-				
+
 				cachorro.setNome(rs.getString("nome"));
 				cachorro.setRaca(rs.getString("raça"));
 				cachorro.setSexo(rs.getString("sexo"));
@@ -147,7 +148,6 @@ public class CachorroDao implements CachorroDAO {
 				cachorro.setIdCachorro(rs.getLong("id_cachorro"));
 				cachorro.setIdUsuario(rs.getLong("id_usuario"));
 			}
-			
 
 		} catch (SQLException e) {
 			e.printStackTrace();

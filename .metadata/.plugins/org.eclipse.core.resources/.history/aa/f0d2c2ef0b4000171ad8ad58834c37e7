@@ -1,0 +1,72 @@
+package br.com.dog.model.dao.impl.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import br.com.dog.model.ConnectionFactory.ConnectionFactory;
+import br.com.dog.model.dao.MatchDAO;
+import br.com.dog.model.entity.Cachorro;
+import br.com.dog.model.entity.Match;
+import br.com.dog.model.entity.Usuario;
+
+public class MatchDao implements MatchDAO {
+
+	@Override
+	public void create(Match match) throws SQLException {
+		Connection con = ConnectionFactory.getConnectionJDBC();
+
+		String sql = "insert into match (requisitante, requisitado, start) values(?,?,?)";
+		PreparedStatement pst = con.prepareStatement(sql);
+
+		try {
+
+			// preenche os valores
+			pst.setLong(1, match.getRequisitante());
+			pst.setLong(2, match.getRequisitado());
+			pst.setString(3, match.getStart());
+
+			// executa
+			pst.execute();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			con.close();
+			pst.close();
+		}
+
+	}
+
+	@Override
+	public List<Match> readAll() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteAll() throws SQLException {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update(Match match) throws SQLException {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Match read(Match match) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(Match match) throws SQLException {
+		// TODO Auto-generated method stub
+
+	}
+
+}

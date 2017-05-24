@@ -10,20 +10,20 @@ import br.com.dog.model.entity.Usuario;
 public interface MatchDAO {
 
 	// Create
-	public void create(Cachorro cachorro) throws SQLException;
+	public void create(Match match) throws SQLException;
 
 	// ReadAll
-	public List<Cachorro> readAll() throws SQLException;
+	public List<Match> readAll() throws SQLException;
 
 	// DeleteAll
 	public void deleteAll() throws SQLException;
 
 	// Update
-	public void update(Cachorro cachorro) throws SQLException;
+	public void update(Match match) throws SQLException;
 
 	// Read especifico
-	public Usuario read(Cachorro cachorro) throws SQLException;
+	public Match read(Match match) throws SQLException;
 
 	// Delete per id
-	public void delete(Cachorro cachorro) throws SQLException;
+	public void delete(Match match) throws SQLException;
 }

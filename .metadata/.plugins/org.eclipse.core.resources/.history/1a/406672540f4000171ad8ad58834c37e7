@@ -1,0 +1,28 @@
+package br.com.dog.test.controller;
+
+import java.sql.SQLException;
+
+import br.com.dog.model.dao.impl.jdbc.MatchDao;
+import br.com.dog.model.entity.Match;
+
+public class MatchController {
+
+	public static void processoAddMatch() {
+		Match match = new Match();
+		match.setRequisitado(1);
+		match.setRequisitante(2);
+		match.setStart("V");
+		MatchDao matchDAO = new MatchDao();
+		try {
+			matchDAO.create(match);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}

@@ -17,6 +17,7 @@ import br.com.dog.model.entity.Usuario;
 public class CachorroController {
 
 	public static void processoAddCachorro() {
+
 		Cachorro cachorro = new Cachorro();
 		cachorro.setIdade(3);
 		cachorro.setNome("chorao");
@@ -51,7 +52,7 @@ public class CachorroController {
 					e.printStackTrace();
 				}
 			else {
-				System.out.println("Nenhum usuario gravado");
+				System.out.println("Nenhum cachorro gravado");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -60,6 +61,7 @@ public class CachorroController {
 	}
 
 	public static void removerTodos() {
+
 		CachorroDAO dogDAO = new CachorroDao();
 		try {
 			dogDAO.deleteAll();
@@ -84,7 +86,7 @@ public class CachorroController {
 			dog.setIdUsuario((long) 4);
 
 			dogDAO.update(dog);
-			System.out.println("olaola");
+
 		} catch (SQLException e) {
 
 			e.printStackTrace();
@@ -92,6 +94,7 @@ public class CachorroController {
 	}
 
 	public static void processoBuscaEspecifica() {
+
 		Cachorro dog = new Cachorro();
 		dog.setIdCachorro((long) 1);
 		CachorroDAO dogDAO = new CachorroDao();
@@ -99,7 +102,7 @@ public class CachorroController {
 		try {
 
 			dog = dogDAO.read(dog);
-			System.out.println(dog.getIdCachorro() + dog.getNome());
+
 			System.out.println("\t\ttID DONO:" + dog.getIdUsuario() + "\tID:" + dog.getIdCachorro() + "\tNome:"
 					+ dog.getNome() + "\tRaça:" + dog.getRaca() + "\tIdade:" + dog.getIdade() + "\t Sexo:"
 					+ dog.getSexo().toUpperCase() + "\n\n");
@@ -126,8 +129,8 @@ public class CachorroController {
 	}
 
 	public static void main(String[] args) {
+		processoAddCachorro();
 		processoBuscarTodos();
-		processoBuscaEspecifica();
-
 	}
+
 }
