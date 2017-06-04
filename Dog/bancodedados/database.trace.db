@@ -1,0 +1,6 @@
+06-03 19:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "USUARIO" not found; SQL statement:
+select * from usuario [42102-176]
+06-03 19:26:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "USUARIO" not found; SQL statement:
+select * from usuario [42102-176]

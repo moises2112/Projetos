@@ -45,7 +45,8 @@ public class UsuarioController {
 			} catch (ParseException e) {
 				e.printStackTrace();
 				stdata = null;
-				System.out.println("Formato de data invalido, digite 'dd/mm/yyyy'");
+				System.out
+						.println("Formato de data invalido, digite 'dd/mm/yyyy'");
 
 			}
 		} while (user.getdataNascimento() == null);
@@ -66,7 +67,6 @@ public class UsuarioController {
 
 	public static void processoBuscaUsuarios() {
 
-
 		UsuarioDAO userDAO = new UsuarioDao();
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -76,12 +76,23 @@ public class UsuarioController {
 					System.out.println("\t\t\t\t\t\t|Usuarios|");
 					for (Object usuario : userDAO.readAll()) {
 						Usuario user = (Usuario) usuario;
-						System.out.println("\t\t\tID:" + user.getIdUsuario() + "\tNome:" + user.getNome()
-								+ "\tDataNascimento:" + sdf.format(user.getdataNascimento().getTime()) + "\tSexo:"
-								+ user.getSexo().toUpperCase() + "\n\t\tLogradouro:" + user.getLogradouro()
-								+ "\tNumero:" + user.getNumero() + "\tCep:" + user.getCep() + "\tBairro:"
-								+ user.getBairro() + "\n\t\t\t\t\tLogin:" + user.getEmail() + "\tSenha:"
-								+ user.getSenha() + "\n\n");
+						System.out
+								.println("\t\t\tID:"
+										+ user.getIdUsuario()
+										+ "\tNome:"
+										+ user.getNome()
+										+ "\tDataNascimento:"
+										+ sdf.format(user.getdataNascimento()
+												.getTime()) + "\tSexo:"
+										+ user.getSexo().toUpperCase()
+										+ "\n\t\tLogradouro:"
+										+ user.getLogradouro() + "\tNumero:"
+										+ user.getNumero() + "\tCep:"
+										+ user.getCep() + "\tBairro:"
+										+ user.getBairro()
+										+ "\n\t\t\t\t\tLogin:"
+										+ user.getEmail() + "\tSenha:"
+										+ user.getSenha() + "\n\n");
 					}
 					System.out.println("\n\n\n");
 				} catch (SQLException e) {
@@ -129,8 +140,6 @@ public class UsuarioController {
 
 	public static void processoBuscaEspecifica() {
 
-
-
 		Usuario user = new Usuario();
 		user.setIdUsuario((long) 3);
 		UsuarioDAO userdao = new UsuarioDao();
@@ -138,10 +147,13 @@ public class UsuarioController {
 		try {
 
 			user = userdao.read(user);
-			System.out.println("\t\t\tID:" + user.getIdUsuario() + "\tNome:" + user.getNome() + "\tDataNascimento:"
-					+ sdf.format(user.getdataNascimento().getTime()) + "\tSexo:" + user.getSexo().toUpperCase()
-					+ "\n\t\tLogradouro:" + user.getLogradouro() + "\tNumero:" + user.getNumero() + "\tCep:"
-					+ user.getCep() + "\tBairro:" + user.getBairro() + "\n\t\t\t\t\tLogin:" + user.getEmail()
+			System.out.println("\t\t\tID:" + user.getIdUsuario() + "\tNome:"
+					+ user.getNome() + "\tDataNascimento:"
+					+ sdf.format(user.getdataNascimento().getTime())
+					+ "\tSexo:" + user.getSexo().toUpperCase()
+					+ "\n\t\tLogradouro:" + user.getLogradouro() + "\tNumero:"
+					+ user.getNumero() + "\tCep:" + user.getCep() + "\tBairro:"
+					+ user.getBairro() + "\n\t\t\t\t\tLogin:" + user.getEmail()
 					+ "\tSenha:" + user.getSenha() + "\n\n");
 		}
 
@@ -166,6 +178,18 @@ public class UsuarioController {
 
 	public static void main(String[] args) {
 		processoBuscaUsuarios();
+		processoAddUser();
+		processoBuscaUsuarios();
+		Usuario user = new Usuario();
+		UsuarioDAO userDAO = new UsuarioDao();
+		user.setEmail("moises@gmail.com");
+		user.setSenha("123456a");
+		try {
+			System.out.println(userDAO.buscarLoginSenha(user.getSenha(), user.getEmail()));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

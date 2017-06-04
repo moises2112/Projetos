@@ -22,7 +22,6 @@ public class UsuarioDao implements UsuarioDAO {
 	@Override
 	public void create(Usuario usuario) throws SQLException {
 
-
 		Connection con = ConnectionFactory.getConnectionJDBC();
 
 		String sql = "insert into Usuario (nome,email,logradouro,numero,cep,bairro,data_nascimento,sexo,senha) values(?,?,?,?,?,?,?,?,?)";
@@ -200,4 +199,43 @@ public class UsuarioDao implements UsuarioDAO {
 		}
 
 	}
+
+	@Override
+	public Usuario buscarLoginSenha(String senha, String email) throws SQLException {
+		Connection con = new ConnectionFactory().getConnectionJDBC();
+		PreparedStatement stmt = con.prepareStatement("select * from usuario where email = ? and senha = ?");
+		stmt.setString(1, email);
+		stmt.setString(2, senha);
+		ResultSet rs = stmt.executeQuery();
+		Usuario user = new Usuario();
+
+		try {
+			while (rs.next()) {
+				user.setNome(rs.getString("nome"));
+
+				user.setEmail(rs.getString("email"));
+				user.setIdUsuario(rs.getLong("id_usuario"));
+
+				// montando a data através do Calendar
+				Calendar data = new GregorianCalendar();
+				data.setTime(rs.getDate("data_nascimento"));
+				user.setdataNascimento(data);
+				user.setLogradouro(rs.getString("Logradouro"));
+				user.setBairro(rs.getString("bairro"));
+				user.setSenha(rs.getString("senha"));
+				user.setSexo(rs.getString("sexo"));
+				user.setNumero(rs.getInt("numero"));
+				user.setCep(rs.getInt("cep"));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			con.close();
+			stmt.close();
+		}
+		return user;
+
+	}
+
 }

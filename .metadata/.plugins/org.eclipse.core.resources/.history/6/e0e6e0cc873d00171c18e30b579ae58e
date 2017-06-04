@@ -1,9 +1,0 @@
-import br.com.dog.model.ConnectionFactory.ConnectionFactory;
-import br.com.dog.test.controller.UsuarioController;
-
-public class RunApp {
-	public static void main(String[] args) {
-
-		UsuarioController.processoAtualizar();
-	}
-}

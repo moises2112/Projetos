@@ -24,4 +24,8 @@ public interface UsuarioDAO {
 
 	// Delete per id
 	public void delete(Usuario usuario) throws SQLException;
+	
+	//Busca por senha e email
+	public Usuario buscarLoginSenha(String senha, String email) throws SQLException;
+	
 }
