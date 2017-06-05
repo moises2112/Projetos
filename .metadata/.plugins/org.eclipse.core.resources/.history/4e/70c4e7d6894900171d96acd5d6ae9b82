@@ -178,6 +178,18 @@ public class UsuarioController {
 
 	public static void main(String[] args) {
 		processoBuscaUsuarios();
+		processoAddUser();
+		processoBuscaUsuarios();
+		Usuario user = new Usuario();
+		UsuarioDAO userDAO = new UsuarioDao();
+		user.setEmail("moises@gmail.com");
+		user.setSenha("123456a");
+		try {
+			System.out.println(userDAO.buscarLoginSenha(user.getSenha(), user.getEmail()));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
