@@ -49,6 +49,7 @@ public class CachorroDao implements CachorroDAO {
 
 	@Override
 	public List<Cachorro> readAll() throws SQLException {
+
 		List<Cachorro> listaDeCachorro = null;
 
 		Connection con = new ConnectionFactory().getConnectionJDBC();
@@ -130,6 +131,7 @@ public class CachorroDao implements CachorroDAO {
 	// Testar codigo abaixo
 	@Override
 	public Cachorro read(Cachorro cachorro) throws SQLException {
+
 		Connection con = new ConnectionFactory().getConnectionJDBC();
 		List<Object> listaDeCachorro = null;
 
@@ -177,4 +179,42 @@ public class CachorroDao implements CachorroDAO {
 
 	}
 
+	@Override
+	public List<Cachorro> buscaPorUsuario(Usuario usuario) throws SQLException {
+		List<Cachorro> listaDeCachorro = null;
+
+		Connection con = new ConnectionFactory().getConnectionJDBC();
+		PreparedStatement stmt = con.prepareStatement("select * from cachorro where id_usuario =?");
+		stmt.setLong(1, usuario.getIdUsuario());
+		// executa um select
+		ResultSet rs = stmt.executeQuery();
+		try {
+			// itera no ResultSet
+			while (rs.next()) {
+				if (listaDeCachorro == null) {
+					listaDeCachorro = new ArrayList<Cachorro>();
+				}
+
+				Cachorro novoCachorro = new Cachorro();
+
+				novoCachorro.setNome(rs.getString("nome"));
+				novoCachorro.setRaca(rs.getString("raça"));
+				novoCachorro.setIdade(rs.getInt("idade"));
+				novoCachorro.setSexo(rs.getString("sexo"));
+				novoCachorro.setIdCachorro(rs.getLong("id_cachorro"));
+				novoCachorro.setIdUsuario(rs.getLong("id_usuario"));
+
+				listaDeCachorro.add(novoCachorro);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			stmt.close();
+			con.close();
+
+		}
+		return listaDeCachorro;
+
+	}
 }

@@ -25,4 +25,6 @@ public interface CachorroDAO {
 
 	// Delete per id
 	public void delete(Cachorro cachorro) throws SQLException;
+
+	public List<Cachorro> buscaPorUsuario(Usuario usuario) throws SQLException;
 }

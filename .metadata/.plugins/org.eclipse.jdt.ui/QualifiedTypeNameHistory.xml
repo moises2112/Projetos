@@ -23,4 +23,7 @@
 <fullyQualifiedTypeName name="br.com.dog.model.dao.MatchDAO"/>
 <fullyQualifiedTypeName name="br.com.dog.model.dao.UsuarioDAO"/>
 <fullyQualifiedTypeName name="br.com.dog.model.dao.impl.jdbc.UsuarioDao"/>
+<fullyQualifiedTypeName name="br.com.dog.model.entity.Usuario"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="br.com.dog.controller.util.NavegacaoUtil"/>
 </qualifiedTypeNameHistroy>

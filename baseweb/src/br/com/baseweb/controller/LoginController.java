@@ -45,10 +45,10 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher view = null;
         
-        String emailDaTela  = request.getParameter("email");
         String senhaDaTela = request.getParameter("senha");
-
-        Usuario usuario = usuarioDAO.buscarUsuarioPorNomeESenha(emailDaTela, senhaDaTela);
+        String emailDaTela  = request.getParameter("email");
+        
+        Usuario usuario = usuarioDAO.buscarUsuarioPorNomeESenha(senhaDaTela, emailDaTela);
         
        	if(usuario!=null){
            	view = request.getRequestDispatcher( NavegacaoUtil.LIST_USUARIO );

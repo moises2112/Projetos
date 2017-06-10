@@ -4,3 +4,34 @@ select * from usuario [42102-176]
 06-03 19:26:20 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLException: Table "USUARIO" not found; SQL statement:
 select * from usuario [42102-176]
+06-06 21:56:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+06-06 21:57:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+06-06 21:57:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+06-06 21:57:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+06-06 22:10:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+06-06 22:11:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+06-06 22:12:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+06-06 22:13:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-176]
+06-10 15:44:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CACHORRO" not found; SQL statement:
+select * from cachorro where id_usuario =? [42102-176]
+06-10 15:45:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CACHORRO" not found; SQL statement:
+select * from cachorro where id_usuario =? [42102-176]
+06-10 15:54:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CACHORRO" not found; SQL statement:
+insert into Cachorro (nome, raça, idade, sexo, id_usuario) values(?,?,?,?,?) [42102-176]
+06-10 15:54:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CACHORRO" not found; SQL statement:
+insert into Cachorro (nome, raça, idade, sexo, id_usuario) values(?,?,?,?,?) [42102-176]
+06-10 15:54:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CACHORRO" not found; SQL statement:
+insert into Cachorro (nome, raça, idade, sexo, id_usuario) values(?,?,?,?,?) [42102-176]

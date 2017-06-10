@@ -203,14 +203,18 @@ public class UsuarioDao implements UsuarioDAO {
 	@Override
 	public Usuario buscarLoginSenha(String senha, String email) throws SQLException {
 		Connection con = new ConnectionFactory().getConnectionJDBC();
-		PreparedStatement stmt = con.prepareStatement("select * from usuario where email = ? and senha = ?");
-		stmt.setString(1, email);
-		stmt.setString(2, senha);
+		PreparedStatement stmt = con.prepareStatement("select * from usuario where senha = ? and email = ?");
+		stmt.setString(1, senha);
+		stmt.setString(2, email);
 		ResultSet rs = stmt.executeQuery();
-		Usuario user = new Usuario();
+		Usuario user = null;
 
 		try {
 			while (rs.next()) {
+
+				if (user == null) {
+					user = new Usuario();
+				}
 				user.setNome(rs.getString("nome"));
 
 				user.setEmail(rs.getString("email"));
@@ -235,6 +239,29 @@ public class UsuarioDao implements UsuarioDAO {
 			stmt.close();
 		}
 		return user;
+
+	}
+
+	@Override
+	public Boolean buscarLogin(String email) throws SQLException {
+		Connection con = new ConnectionFactory().getConnectionJDBC();
+		PreparedStatement stmt = con.prepareStatement("select * from usuario where email = ?");
+		stmt.setString(1, email);
+		ResultSet rs = stmt.executeQuery();
+		Usuario user = null;
+		Boolean exist = null;
+		try {
+			if (rs.next()) 
+				exist = true;
+			else
+				exist = false;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			con.close();
+			stmt.close();
+		}
+		return exist;
 
 	}
 

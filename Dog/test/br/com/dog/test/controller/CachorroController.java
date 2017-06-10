@@ -129,8 +129,8 @@ public class CachorroController {
 	}
 
 	public static void main(String[] args) {
-		processoAddCachorro();
 		processoBuscarTodos();
+
 	}
 
 }

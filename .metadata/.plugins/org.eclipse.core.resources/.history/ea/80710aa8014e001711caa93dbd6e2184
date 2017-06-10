@@ -1,0 +1,18 @@
+package br.com.dog.controller.util;
+
+public class NavegacaoUtil {
+
+	public static final String LIST_USUARIO = "/paginas/listUsuario.jsp";
+	
+	public static final String HOME = "/paginas/home.jsp";
+
+	public static final String INSERIR_OU_EDITAR = "/paginas/usuario.jsp";
+
+	public static final String LOGIN = "/login.jsp";
+	public static final String CADASTRO = "/cadastrar.jsp";
+
+	public static final String LIST_CACHORRO = "/paginas/listCachorro.jsp";
+
+	public static final String INSERIR_OU_EDITAR_CACHORRO = "/paginas/cachorro.jsp";
+
+}

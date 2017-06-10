@@ -27,5 +27,8 @@ public interface UsuarioDAO {
 	
 	//Busca por senha e email
 	public Usuario buscarLoginSenha(String senha, String email) throws SQLException;
+
+	//Busca por email, checar se usuario ja possui cadastrado
+	Boolean buscarLogin(String email) throws SQLException;
 	
 }
