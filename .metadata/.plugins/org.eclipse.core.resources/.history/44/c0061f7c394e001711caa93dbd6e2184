@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+
+$(document).ready(function() {
+	$('#').click(function() {
+		var titulo = $('h1').attr("title");
+		$('#result').text("o titulo do h1 eh:" + titulo);
+
+		var caminho = $('#path').val();
+
+		$('img').css('display', 'block').attr({
+
+			src : caminho,
+			alt : "rinegan",
+			title : "moises voce e um bosta"
+		})
+	});
+	$('.remover').click(function() {
+		$('img').removeAttr('src');
+
+	});
+});

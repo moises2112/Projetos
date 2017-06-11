@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+
+$(document).ready(function() {
+	$('.btn-editar').click(function() {
+
+		$('img').css('display', 'block').attr({
+
+			src : caminho,
+			alt : "rinegan",
+			title : "moises voce e um bosta"
+		})
+	});
+	$('.remover').click(function() {
+		$('img').removeAttr('src');
+
+	});
+});

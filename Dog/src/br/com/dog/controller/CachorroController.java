@@ -57,16 +57,22 @@ public class CachorroController extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Cachorro dog = null;
+		Usuario user = null;
 		CachorroDAO dogDAO = new CachorroDao();
 		String action = request.getParameter("action");
 		RequestDispatcher view = null;
 		if (action.equalsIgnoreCase("cadastrar")) {
 			dog = new Cachorro();
+			user = new Usuario();
+			// user = (Usuario) request.getAttribute("usuario");
+			user.setIdUsuario(Long.parseLong(request.getParameter("idUsuario")));
+			// System.out.println(user);
+
 			dog.setNome(request.getParameter("nome"));
-			dog.setSexo(request.getParameter("sexo"));
+			dog.setSexo(request.getParameter("optradio").toUpperCase());
 			dog.setIdade(Integer.parseInt(request.getParameter("idade")));
-			Usuario.dog.setIdUsuario(Long.parseLong());
-			dog.setRaca(request.getParameter("sexo"));
+			dog.setIdUsuario(user.getIdUsuario());
+			dog.setRaca(request.getParameter("raca"));
 
 			try {
 				dogDAO.create(dog);
@@ -76,14 +82,16 @@ public class CachorroController extends HttpServlet {
 				e.printStackTrace();
 			}
 			view = request.getRequestDispatcher(NavegacaoUtil.HOME);
+			request.setAttribute("usuarioLogado", user);
 		}
 
 		try {
-			request.setAttribute("myDogs", dogDAO.buscaPorUsuario(usuario));
+			request.setAttribute("myDogs", dogDAO.buscaPorUsuario(user));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 		view.forward(request, response);
 
 	}

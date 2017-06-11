@@ -92,7 +92,7 @@ public class UsuarioController extends HttpServlet {
 				user = new Usuario();
 				user.setNome(request.getParameter("nome"));
 				user.setEmail(request.getParameter("email"));
-				user.setSexo(request.getParameter("sexo"));
+				user.setSexo(request.getParameter("optradio").toUpperCase());
 				user.setSenha(request.getParameter("senha"));
 				user.setBairro(request.getParameter("bairro"));
 				user.setLogradouro(request.getParameter("logradouro"));
