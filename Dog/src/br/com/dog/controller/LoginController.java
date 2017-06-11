@@ -76,6 +76,7 @@ public class LoginController extends HttpServlet {
 				// e.printStackTrace();
 				// }
 				request.setAttribute("usuarioLogado", usuario);
+
 				CachorroDAO dogDAO = new CachorroDao();
 				try {
 					request.setAttribute("myDogs", dogDAO.buscaPorUsuario(usuario));

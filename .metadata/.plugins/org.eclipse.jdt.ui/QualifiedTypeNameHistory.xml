@@ -17,8 +17,6 @@
 <fullyQualifiedTypeName name="br.com.dog.model.entity.Match"/>
 <fullyQualifiedTypeName name="br.com.dog.model.dao.impl.jdbc.MatchDao"/>
 <fullyQualifiedTypeName name="br.com.dog.model.dao.MatchDAO"/>
-<fullyQualifiedTypeName name="br.com.dog.model.dao.UsuarioDAO"/>
-<fullyQualifiedTypeName name="br.com.dog.model.dao.impl.jdbc.UsuarioDao"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.lang.Long"/>
@@ -27,6 +25,8 @@
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="br.com.dog.controller.util.NavegacaoUtil"/>
-<fullyQualifiedTypeName name="br.com.dog.model.entity.Cachorro"/>
 <fullyQualifiedTypeName name="br.com.dog.model.entity.Usuario"/>
+<fullyQualifiedTypeName name="br.com.dog.model.dao.UsuarioDAO"/>
+<fullyQualifiedTypeName name="br.com.dog.model.dao.impl.jdbc.UsuarioDao"/>
+<fullyQualifiedTypeName name="br.com.dog.model.entity.Cachorro"/>
 </qualifiedTypeNameHistroy>

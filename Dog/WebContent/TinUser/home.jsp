@@ -27,6 +27,7 @@
 				<td class="primeiraLinha colunas">Nome</td>
 				<td class="primeiraLinha colunas">Raça</td>
 				<td class="primeiraLinha colunas">Sexo</td>
+				<td class="primeiraLinha colunas">Idade</td>
 			</tr>
 
 			<c:forEach items="${myDogs}" var="dog">
@@ -34,8 +35,12 @@
 					<td class="colunas"><c:out value="${dog.nome}" /></td>
 					<td class="colunas"><c:out value="${dog.raca}" /></td>
 					<td class="colunas"><c:out value="${dog.sexo}" /></td>
+					<td class="colunas"><c:out value="${dog.idade}" /></td>
 					<td class="colunas"><Button class="btn btn-editar">Editar</Button></td>
-					<td class="colunas"><Button class="btn btn-remover">Remover</Button></td>
+					<td class="colunas"><input type="button"
+						class="btn btn-remover"
+						onClick="window.location.href='CachorroController.do'"
+						value="Remover" /></td>
 				</tr>
 			</c:forEach>
 

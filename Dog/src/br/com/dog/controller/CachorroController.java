@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.dog.controller.util.NavegacaoUtil;
 import br.com.dog.model.dao.CachorroDAO;
+import br.com.dog.model.dao.UsuarioDAO;
 import br.com.dog.model.dao.impl.jdbc.CachorroDao;
+import br.com.dog.model.dao.impl.jdbc.UsuarioDao;
 import br.com.dog.model.entity.Cachorro;
 import br.com.dog.model.entity.Usuario;
 
@@ -55,18 +57,27 @@ public class CachorroController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("entrou no post" + request.getParameter("action"));
 		// TODO Auto-generated method stub
 		Cachorro dog = null;
 		Usuario user = null;
 		CachorroDAO dogDAO = new CachorroDao();
+		UsuarioDAO userDAO = new UsuarioDao();
 		String action = request.getParameter("action");
 		RequestDispatcher view = null;
 		if (action.equalsIgnoreCase("cadastrar")) {
 			dog = new Cachorro();
 			user = new Usuario();
-			// user = (Usuario) request.getAttribute("usuario");
+			// System.out.println(request.getAttribute("Usuario"));
+			// user = (Usuario) request.getAttribute("Usuario");
+
 			user.setIdUsuario(Long.parseLong(request.getParameter("idUsuario")));
-			// System.out.println(user);
+			try {
+				user = userDAO.read(user);
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 
 			dog.setNome(request.getParameter("nome"));
 			dog.setSexo(request.getParameter("optradio").toUpperCase());
@@ -83,6 +94,17 @@ public class CachorroController extends HttpServlet {
 			}
 			view = request.getRequestDispatcher(NavegacaoUtil.HOME);
 			request.setAttribute("usuarioLogado", user);
+		} else if (action.equalsIgnoreCase("editar")) {
+
+		} else if (action.equalsIgnoreCase("remover")) {
+			dog = new Cachorro();
+			dog.setIdCachorro(Long.parseLong(request.getParameter("idDog")));
+			try {
+				dogDAO.delete(dog);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		try {
