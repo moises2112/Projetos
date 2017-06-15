@@ -1,37 +1,21 @@
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="imagens/favicon.ico">
 <meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-<title>Bem vindo ao Tindog</title>
+<title>Tindog</title>
 <link rel="stylesheet" type="text/css" href="css\bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css\dog.css">
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
 
 
 <style>
 /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-.btn-large {
-	padding: 9px 14px;
-	font-size: 15px;
-	line-height: normal;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-}
-
-.btn-block {
-	width: 100%;
-	display: block;
-}
 
 * {
 	-webkit-box-sizing: border-box;
@@ -40,6 +24,8 @@
 	-o-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
+
 
 html {
 	width: 100%;
@@ -81,22 +67,6 @@ body {
 		endColorstr='#092756', GradientType=1);
 }
 
-.login {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -150px 0 0 -150px;
-	width: 300px;
-	height: 300px;
-}
-
-.login h1 {
-	color: #fff;
-	text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-	letter-spacing: 1px;
-	text-align: center;
-}
-
 input {
 	width: 100%;
 	margin-bottom: 10px;
@@ -124,41 +94,29 @@ input:focus {
 }
 </style>
 
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
 
 </head>
+
 <body>
+
+
 	<div class="login">
-		<h1>Tindog</h1>
-		<form action="LoginController.do?action=logar" method="post"
-			method="post">
-			<input type="text" name="email" placeholder="E-mail"
-				required="required" /> <input type="password" name="senha"
-				placeholder="Password" required="required" /> <input type="submit"
-				value='Entrar' class="btn btn-primary btn-block btn-large">
-			<input type="button" value='Cadastre-se'
-				class="btn btn-danger btn-block btn-large"
-				onClick="window.location.href='./cadastrar.jsp'">
+		<div>
+			<img id="simbolo" src="imagens/tinder_dog_white.png" height="50"
+				width="50">
+			<h1>Tindog</h1>
+		</div>
+		<form action="LoginController.do?action=logar" method="post">
+			<input type="text" name="email" placeholder="E-mail" required="required" />
+			<input type="password" name="senha" placeholder="Password" required="required" /> 
+			<input type="submit" value="Entrar"	class="btn btn-primary btn-block btn-large" /> 
+			<input type="button" class="btn btn-danger btn-block btn-large" value="Cadastrar"
+				onClick="window.location.href='./cadastrar.jsp'" />
 		</form>
-		<!-- 		<form action="LoginController.do?action=logar" method="post"> -->
+	</div>
 
-		<!-- 			<fieldset> -->
-		<!-- 				<div> -->
-		<!-- 					<label for="email">Email</label> <input type="text" name="email" -->
-		<!-- 						placeholder="email" /> -->
-		<!-- 				</div> -->
-		<!-- 				<div> -->
-		<!-- 					<label for="senha">Senha</label> <input type="password" -->
-		<!-- 						name="senha" placeholder="senha" /> -->
-		<!-- 				</div> -->
-		<!-- 				<div> -->
-		<!-- 					<input type="submit" value="Login" /> <input type="button" -->
-		<!-- 						value="Cadastrar" onClick="window.location.href='./cadastrar.jsp'" /> -->
 
-		<!-- 				</div> -->
 
-		<!-- 			</fieldset> -->
-		<!-- 		</form> -->
 </body>
 </html>

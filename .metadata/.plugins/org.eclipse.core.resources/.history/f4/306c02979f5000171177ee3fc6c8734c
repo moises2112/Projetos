@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+
+$(document).ready(function() {
+	$('.btn-editar').click(function() {
+		$('.formscadastro').slideUp('fast');
+		$('.formsedicao').setAttribute('var',)
+		$('.formsedicao').slideToggle('fast');
+
+	});
+	$('.btn-inserir').click(function() {
+		$('.formsedicao').slideUp('fast');
+		$('.formscadastro').slideToggle('fast');
+
+	});
+});

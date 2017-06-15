@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+
+$(document).ready(function() {
+	$('.btn-editar').click(function() {
+		$('.formscadastro').slideUp('fast');
+		var nome = $(this).closest('tr').find("#nomeedit").text();
+		var raca = $(this).closest('tr').find("#racaedit").text();
+		var idade = $(this).closest('tr').find("#idadeedit").text();
+		var sexo = $(this).closest('tr').find("#sexoedit").text();
+		$('#editnome').val(nome);
+		$('#editraca').val(raca);
+		$('#editidade').val(idade);
+
+		$('.formsedicao').slideToggle('fast');
+
+	});
+	$('.btn-inserir').click(function() {
+		$('.formsedicao').slideUp('fast');
+		$('.formscadastro').slideToggle('fast');
+
+	});
+});

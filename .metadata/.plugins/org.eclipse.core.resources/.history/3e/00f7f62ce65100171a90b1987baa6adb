@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+
+$(document).ready(function() {
+	$('.btn-editar').click(function() {
+		$('#editraca').val("teste123");
+		$('#editnome').val("teste123");
+		// $('.formscadastro').slideUp('fast');
+		// var nome = $(this).closest('tr').find("#nomeedit").text();
+		// var raca = $(this).closest('tr').find("#racaedit").text();
+		// var idade = $(this).closest('tr').find("#idadeedit").text();
+		// var sexo = $(this).closest('tr').find("#sexoedit").text();
+		// $('.formsedicao').slideToggle('fast');
+		// $('input[id="editnome"]').val("teste123");
+		// $('#editnome').setAttribute('value', 'teste1234')
+		// $('#editraca').val(raca);
+
+	});
+	$('.btn-inserir').click(function() {
+		$('.formsedicao').slideUp('fast');
+		$('.formscadastro').slideToggle('fast');
+
+	});
+});

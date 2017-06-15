@@ -38,7 +38,7 @@ public class CachorroController extends HttpServlet {
 	 * @see Servlet#init(ServletConfig)
 	 */
 	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
+
 	}
 
 	/**
@@ -47,8 +47,41 @@ public class CachorroController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 
+		Cachorro dog = null;
+		Usuario user = null;
+		CachorroDAO dogDAO = new CachorroDao();
+		UsuarioDAO userDAO = new UsuarioDao();
+		String action = request.getParameter("action");
+		RequestDispatcher view = null;
+		user = new Usuario();
+		user.setIdUsuario(Long.parseLong(request.getParameter("idUsuario")));
+		try {
+			user = userDAO.read(user);
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		if (action.equalsIgnoreCase("remover")) {
+			dog = new Cachorro();
+			dog.setIdCachorro(Long.parseLong(request.getParameter("idDog")));
+
+			try {
+				dogDAO.delete(dog);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				request.setAttribute("myDogs", dogDAO.buscaPorUsuario(user));
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			view = request.getRequestDispatcher(NavegacaoUtil.HOME);
+			request.setAttribute("usuarioLogado", user);
+			view.forward(request, response);
+		}
 	}
 
 	/**
@@ -57,7 +90,7 @@ public class CachorroController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("entrou no post" + request.getParameter("action"));
+
 		// TODO Auto-generated method stub
 		Cachorro dog = null;
 		Usuario user = null;
@@ -65,19 +98,18 @@ public class CachorroController extends HttpServlet {
 		UsuarioDAO userDAO = new UsuarioDao();
 		String action = request.getParameter("action");
 		RequestDispatcher view = null;
+		user = new Usuario();
+		user.setIdUsuario(Long.parseLong(request.getParameter("idUsuario")));
+		try {
+			user = userDAO.read(user);
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		// Cadastrar Novo Dog
 		if (action.equalsIgnoreCase("cadastrar")) {
 			dog = new Cachorro();
-			user = new Usuario();
-			// System.out.println(request.getAttribute("Usuario"));
-			// user = (Usuario) request.getAttribute("Usuario");
-
-			user.setIdUsuario(Long.parseLong(request.getParameter("idUsuario")));
-			try {
-				user = userDAO.read(user);
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
 
 			dog.setNome(request.getParameter("nome"));
 			dog.setSexo(request.getParameter("optradio").toUpperCase());
@@ -93,12 +125,35 @@ public class CachorroController extends HttpServlet {
 				e.printStackTrace();
 			}
 			view = request.getRequestDispatcher(NavegacaoUtil.HOME);
-			request.setAttribute("usuarioLogado", user);
-		} else if (action.equalsIgnoreCase("editar")) {
 
-		} else if (action.equalsIgnoreCase("remover")) {
+		} else if (action.equalsIgnoreCase("editar")) {
+			System.out.println("chegou aqui");
+			String campo = request.getParameter("campo");
 			dog = new Cachorro();
 			dog.setIdCachorro(Long.parseLong(request.getParameter("idDog")));
+			try {
+				dog = dogDAO.read(dog);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if (campo.equalsIgnoreCase("nome")) {
+				System.out.println("chegou aqui");
+				System.out.println(request.getAttribute("data-value"));
+				System.out.println(request.getParameter("testandon"));
+
+				try {
+					dogDAO.update(dog);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		} else if (action.equalsIgnoreCase("remover")) {
+			System.out.println("Entro no remover");
+			dog = new Cachorro();
+			dog.setIdCachorro(Long.parseLong(request.getParameter("idDog")));
+			view = request.getRequestDispatcher(NavegacaoUtil.HOME);
 			try {
 				dogDAO.delete(dog);
 			} catch (SQLException e) {
@@ -113,7 +168,7 @@ public class CachorroController extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		request.setAttribute("usuarioLogado", user);
 		view.forward(request, response);
 
 	}

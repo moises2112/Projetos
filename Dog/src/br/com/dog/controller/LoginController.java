@@ -68,13 +68,7 @@ public class LoginController extends HttpServlet {
 
 			if (usuario != null) {
 				view = request.getRequestDispatcher(NavegacaoUtil.HOME);
-				// try {
-				//
-				// request.setAttribute("listaDeUsuarios", userDAO.readAll());
-				// } catch (SQLException e) {
-				// // TODO Auto-generated catch block
-				// e.printStackTrace();
-				// }
+
 				request.setAttribute("usuarioLogado", usuario);
 
 				CachorroDAO dogDAO = new CachorroDao();

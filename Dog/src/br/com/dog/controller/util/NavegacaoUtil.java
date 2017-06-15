@@ -5,6 +5,7 @@ public class NavegacaoUtil {
 	public static final String LIST_USUARIO = "/TinUser/listUsuario.jsp";
 
 	public static final String HOME = "/TinUser/home.jsp";
+	
 
 	public static final String INSERIR_OU_EDITAR = "/TinUser/usuario.jsp";
 

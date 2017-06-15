@@ -44,29 +44,6 @@ public class UsuarioController extends HttpServlet {
 		String forward = "";
 		String action = request.getParameter("action");
 
-		// if (action.equalsIgnoreCase("remover")) {
-		// forward = NavegacaoUtil.LIST_USUARIO;
-		// int usuarioId = Integer.parseInt(request.getParameter("usuarioId"));
-		// Usuario usuarioParaDeletacao =
-		// usuarioDAO.buscarUsuarioPorId(usuarioId);
-		// usuarioDAO.removerUsuario(usuarioParaDeletacao);
-		//
-		// request.setAttribute("listaDeUsuarios", usuarioDAO.buscarTodos());
-		// } else if (action.equalsIgnoreCase("editar")) {
-		// forward = NavegacaoUtil.INSERIR_OU_EDITAR;
-		// int usuarioId = Integer.parseInt(request.getParameter("usuarioId"));
-		// Usuario usuarioEdicao = usuarioDAO.buscarUsuarioPorId(usuarioId);
-		// request.setAttribute("usuario", usuarioEdicao);
-		// } else
-
-		// } else {
-		// forward = NavegacaoUtil.LIST_USUARIO;
-		// List<Usuario> lista = usuarioDAO.buscarTodos();
-		//
-		// request.setAttribute("listaDeUsuarios", lista);
-		// }
-		// RequestDispatcher view = request.getRequestDispatcher(forward);
-		// view.forward(request, response);
 	}
 
 	/**
@@ -110,7 +87,6 @@ public class UsuarioController extends HttpServlet {
 				}
 				try {
 					userDAO.create(user);
-					request.setAttribute("erroAoLogar", "Usuário cadastrado");
 
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
@@ -120,7 +96,7 @@ public class UsuarioController extends HttpServlet {
 				view.forward(request, response);
 			} else {
 				RequestDispatcher view = request.getRequestDispatcher(NavegacaoUtil.LOGIN);
-				request.setAttribute("erroAoLogar", "E-mail já está cadastrado");
+
 				view.forward(request, response);
 
 			}
