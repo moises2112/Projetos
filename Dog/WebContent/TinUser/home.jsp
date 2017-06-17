@@ -4,6 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="shortcut icon" href="imagens/favicon.ico">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -11,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="css\bootstrap.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
 <link href="css/business-frontpage.css" rel="stylesheet">
+<script src="js\dog.js" type="text/css"></script>
 <link
 	href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css"
 	rel="stylesheet" />
@@ -32,6 +34,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
+
 			<a class="navbar-brand" href="#">Tindog</a>
 		</div>
 		<div class="collapse navbar-collapse"
@@ -62,6 +65,7 @@
 				<td class="primeiraLinha colunas">Ra&ccedil;a</td>
 				<td class="primeiraLinha colunas">Sexo</td>
 				<td class="primeiraLinha colunas">Idade</td>
+				<td class="primeiraLinha colunas">Editar</td>
 				<td class="primeiraLinha colunas">Remover</td>
 			</tr>
 		</thead>
@@ -69,33 +73,47 @@
 		<tbody>
 			<c:forEach items="${myDogs}" var="dog">
 				<tr>
-					<td class="colunas"><a name="testandon" id="testandon"
-						class="editNome" data-type="text" value=data-value
-						data-pk="<c:out value="${dog.idCachorro}" />"
-						data-url="CachorroController.do?action=editar&campo=nome&idDog=<c:out value="${dog.idCachorro}" />"
-						data-title="Nome do Dog"> <c:out value="${dog.nome}" />
-					</a></td>
-					<td class="colunas"><a href="#" class="editRaca"
-						data-type="text" data-pk="<c:out value="${dog.idCachorro}" />"
-						data-post="CachorroController.do?action=editar&campo=raca&idUsuario=<c:out value="${usuarioLogado.idUsuario}" />"
-						data-title="Raça do Dog"> <c:out value="${dog.raca}" />
-					</a></td>
-					<td class="colunas"><a href="#" class="editSexo"
-						data-type="radiolist"
-						data-pk="<c:out value="${dog.idCachorro}" />"
-						data-post="CachorroController.do?action=editar&campo=sexo&idUsuario=<c:out value="${usuarioLogado.idUsuario}" />"
-						data-title="Sexo do Dog"> <c:out value="${dog.sexo}" />
-					</a></td>
-					<td class="colunas"><a href="#" class="editIdade"
-						data-type="number" data-pk="<c:out value="${dog.idCachorro}" />"
-						data-post="CachorroController.do?action=editar&campo=idade&idUsuario=<c:out value="${usuarioLogado.idUsuario}" />"
-						data-title="Idade do Dog"> <c:out value="${dog.idade}" />
-					</a></td>
+					<td class="colunas editNome"><c:out value="${dog.nome}" /></td>
+					<td class="colunas editRaca"><c:out value="${dog.raca}" /></td>
+					<td class="colunas editSexo"><c:out value="${dog.sexo}" /></td>
+					<td class="colunas editIdade"><c:out value="${dog.idade}" />
+					</td>
+					<td class="tdbuttonedit"><button class="btn btn-editar"
+							data-toggle="modal" var='<c:out value="${dog.idade}" />'
+							'" data-target="#editarDog">Editar</button></td>
 					<td class="colunas"><a class="btn btn-remover"
 						href="CachorroController.do?action=remover&idDog=<c:out value="${dog.idCachorro}" />&idUsuario=<c:out value="${usuarioLogado.idUsuario}" />">Remover
 					</a></td>
 				</tr>
+
+				<!-- 			Código	Bootstrap editable -->
+				<!-- 				<tr> -->
+				<!-- 					<td class="colunas"><a class="editNome" data-type="text" -->
+				<%-- 						value=data-value data-pk="<c:out value="${dog.idCachorro}" />" --%>
+				<%-- 						data-url="CachorroController.do?action=editar&campo=nome&idDog=<c:out value="${dog.idCachorro}" />" --%>
+				<%-- 						data-title="Nome do Dog"> <c:out value="${dog.nome}" /> --%>
+				<!-- 					</a></td> -->
+				<!-- 					<td class="colunas"><a href="#" class="editRaca" -->
+				<%-- 						data-type="text" data-pk="<c:out value="${dog.idCachorro}" />" --%>
+				<%-- 						data-post="CachorroController.do?action=editar&campo=raca&idUsuario=<c:out value="${usuarioLogado.idUsuario}" />" --%>
+				<%-- 						data-title="Raça do Dog"> <c:out value="${dog.raca}" /> --%>
+				<!-- 					</a></td> -->
+				<!-- 					<td class="colunas"><a href="#" class="editSexo" -->
+				<!-- 						data-type="radiolist" -->
+				<%-- 						data-pk="<c:out value="${dog.idCachorro}" />" --%>
+				<%-- 						data-post="CachorroController.do?action=editar&campo=sexo&idUsuario=<c:out value="${usuarioLogado.idUsuario}" />" --%>
+				<%-- 						data-title="Sexo do Dog"> <c:out value="${dog.sexo}" /> --%>
+				<!-- 					</a></td> -->
+				<!-- 					<td class="colunas"><a href="#" class="editIdade" -->
+				<%-- 						data-type="number" data-pk="<c:out value="${dog.idCachorro}" />" --%>
+				<%-- 						data-post="CachorroController.do?action=editar&campo=idade&idUsuario=<c:out value="${usuarioLogado.idUsuario}" />" --%>
+				<%-- 						data-title="Idade do Dog"> <c:out value="${dog.idade}" /> --%>
+				<!-- 					</a></td> -->
+				<!-- 									<td class="colunas"><a class="btn btn-remover" -->
+				<%-- 										href="CachorroController.do?action=remover&idDog=<c:out value="${dog.idCachorro}" />&idUsuario=<c:out value="${usuarioLogado.idUsuario}" />">Remover --%>
+				<!-- 									</a></td> -->
 			</c:forEach>
+			<!-- 				</tr> -->
 		</tbody>
 		<tfoot>
 			<tr>
@@ -105,7 +123,56 @@
 			</tr>
 		</tfoot>
 	</table>
+	<div id="editarDog" class="modal fade" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<form>
+					<%-- 					action="CachorroController.do?action=editar&idUsuario=<c:out value="${usuarioLogado.idUsuario}"/>" --%>
+					<!-- 					method="post" -->
 
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title">Atualizar Dog</h4>
+					</div>
+					<div class="modal-body">
+						<!-- 						<div class="form-group"> -->
+						<!-- 							<label for="idatualizar">id</label><input name="idatualizar" -->
+						<!-- 								class="idatualizar" /> -->
+						<!-- 						</div> -->
+						<div class="form-group">
+							<label for="nome">Nome</label> <input id="nome" name="nomeedit"
+								type="text" placeholder="Peludinho"
+								class="form-control input-md nomeedit" />
+						</div>
+						<div class="form-group">
+							<label for="nome">Raça</label> <input id="raca" name="racaedit"
+								type="text" placeholder="Yorkshine"
+								class="form-control input-md racaedit" />
+						</div>
+						<div class="form-group">
+							<h4>Sexo</h4>
+							<label><input type="radio" class="sexoeditm"
+								name="optradiofm" value="M" />M</label> <label><input
+								type="radio" name="optradiofm" class="sexoeditf" value="F">F</label>
+						</div>
+						<div class="form-group">
+							<h4>Idade</h4>
+							<input type="number" name="idadeedit" placeholder="Idade em anos"
+								class="form-control input-md idadeedit" />
+						</div>
+					</div>
+					<div class="modal-footer">
+						<div>
+							<label class="btn btn-inserir">Atualizar</label>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	<div id="cadastroDog" class="modal fade" role="dialog">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -212,11 +279,8 @@
 		</div>
 	</div>
 	</footer>
-	<script type="text/javascript"
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
-	<script type="text/javascript"
-		src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 	<script type="text/javascript" src="js/dog.js"></script>
 
 </body>

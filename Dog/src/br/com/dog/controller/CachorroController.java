@@ -127,41 +127,23 @@ public class CachorroController extends HttpServlet {
 			view = request.getRequestDispatcher(NavegacaoUtil.HOME);
 
 		} else if (action.equalsIgnoreCase("editar")) {
-			System.out.println("chegou aqui");
-			String campo = request.getParameter("campo");
+
 			dog = new Cachorro();
-			dog.setIdCachorro(Long.parseLong(request.getParameter("idDog")));
+			
+			dog.setIdCachorro(Long.parseLong(request.getParameter("idatualizar")));
+			dog.setNome(request.getParameter("nomeedit"));
+			dog.setSexo(request.getParameter("optradiofm").toUpperCase());
+			dog.setIdade(Integer.parseInt(request.getParameter("idadeedit")));
+			dog.setIdUsuario(user.getIdUsuario());
+			dog.setRaca(request.getParameter("racaedit"));
 			try {
-				dog = dogDAO.read(dog);
+				dogDAO.update(dog);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			if (campo.equalsIgnoreCase("nome")) {
-				System.out.println("chegou aqui");
-				System.out.println(request.getAttribute("data-value"));
-				System.out.println(request.getParameter("testandon"));
-
-				try {
-					dogDAO.update(dog);
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		} else if (action.equalsIgnoreCase("remover")) {
-			System.out.println("Entro no remover");
-			dog = new Cachorro();
-			dog.setIdCachorro(Long.parseLong(request.getParameter("idDog")));
 			view = request.getRequestDispatcher(NavegacaoUtil.HOME);
-			try {
-				dogDAO.delete(dog);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		}
-
 		try {
 			request.setAttribute("myDogs", dogDAO.buscaPorUsuario(user));
 		} catch (SQLException e) {
@@ -172,4 +154,5 @@ public class CachorroController extends HttpServlet {
 		view.forward(request, response);
 
 	}
+
 }

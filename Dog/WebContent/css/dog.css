@@ -9,6 +9,9 @@
 	margin-right: 0px;
 	width: 110px;
 }
+.idatualizar{
+	display:none;
+}
 
 .login {
 	position: absolute;
@@ -90,15 +93,7 @@ td {
 	padding-bottom: 7px;
 }
 
-.formscadastro {
-	display: none;
-	margin: 15px 15px 15px 15px;
-}
 
-.formsedicao {
-/* 	display: none; */
-	margin: 15px 15px 15px 15px;
-}
 
 body {
 	width: 100%;
