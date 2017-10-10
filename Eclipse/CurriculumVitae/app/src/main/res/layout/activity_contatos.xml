@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.internet.curriculumvitae.Contatos"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aline      915761593"
+        android:id="@+id/TelAline" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Matheus      15641987"
+        android:id="@+id/TelMatheus" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lucas      123145646"
+        android:id="@+id/TelLucas" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Moises      456798497"
+        android:id="@+id/TelMoises" />
+
+    <Button
+        android:layout_width="94dp"
+        android:layout_height="wrap_content"
+        android:text="Enviar Email"
+        android:id="@+id/btnemail"
+        android:onClick="enviarEmail"
+        />
+
+    <Button
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:text="Ligar"
+        android:id="@+id/btnligar" />
+
+</LinearLayout>
